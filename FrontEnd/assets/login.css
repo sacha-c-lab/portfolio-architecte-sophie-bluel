@@ -1,0 +1,75 @@
+/* SECTION LOGIN */
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+}
+
+/* Titre */
+
+.login-section h2 {
+    color: #1D6154;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Formulaire */
+
+.login-section form {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+}
+
+/* Labels */
+
+.login-section label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Inputs */
+
+.login-section input {
+    height: 40px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding-left: 10px;
+}
+
+/* Bouton */
+
+.login-section button {
+    background-color: #1D6154;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-section button:hover {
+    background-color: #144838;
+}
+
+/* Lien mot de passe oublié */
+
+.forgot-password {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    text-decoration: underline;
+}
+
+/* Message erreur */
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
