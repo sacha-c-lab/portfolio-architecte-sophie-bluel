@@ -1,75 +1,197 @@
-/* SECTION LOGIN */
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #f5f0e6;
+    color: #2d2d2d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+}
+
+header h1 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #b5541c;
+    letter-spacing: 0.02em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+header h1 span {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #2d2d2d;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+}
+
+nav ul a:hover li {
+    color: #1a5c4a;
+}
+
+nav ul a[href="./login.html"] li {
+    font-weight: 700;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* ===== LOGIN SECTION ===== */
 .login-section {
+    width: 100%;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 120px;
+    gap: 20px;
 }
-
-/* Titre */
 
 .login-section h2 {
-    color: #1D6154;
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-family: "Syne", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a5c4a;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
 }
 
-/* Formulaire */
-
-.login-section form {
+/* ===== FORM ===== */
+#login-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 380px;
+    gap: 10px;
 }
 
-/* Labels */
-
-.login-section label {
-    margin-bottom: 5px;
-    font-size: 14px;
+#login-form label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #2d2d2d;
+    letter-spacing: 0.03em;
 }
 
-/* Inputs */
-
-.login-section input {
-    height: 40px;
-    margin-bottom: 20px;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding-left: 10px;
+#login-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d8d0c4;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #2d2d2d;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-/* Bouton */
-
-.login-section button {
-    background-color: #1D6154;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    height: 40px;
-    cursor: pointer;
-    margin-top: 10px;
+#login-form input:focus {
+    border-color: #1a5c4a;
 }
 
-.login-section button:hover {
-    background-color: #144838;
-}
-
-/* Lien mot de passe oublié */
-
-.forgot-password {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-    color: black;
-    text-decoration: underline;
-}
-
-/* Message erreur */
-
+/* ===== ERROR MESSAGE ===== */
 .error-message {
-    color: red;
+    font-size: 0.78rem;
+    color: #c0392b;
+    min-height: 16px;
     text-align: center;
-    margin-top: 10px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+#login-form button[type="submit"] {
+    margin-top: 8px;
+    width: 100%;
+    padding: 14px;
+    background-color: #1a5c4a;
+    color: #ffffff;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+#login-form button[type="submit"]:hover {
+    background-color: #144a3b;
+    transform: translateY(-1px);
+}
+
+#login-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===== FORGOT PASSWORD ===== */
+.forgot-password {
+    font-size: 0.8rem;
+    color: #2d2d2d;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #1a5c4a;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 20px 48px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer p {
+    font-size: 0.75rem;
+    color: #2d2d2d;
+    letter-spacing: 0.03em;
 }

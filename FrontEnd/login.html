@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Polices Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
@@ -12,39 +13,41 @@
 	<script src="./assets/login.js" defer></script>
 </head>
 <body>
-<header>
-    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-    <nav>
-		<ul>
-			<a href="#portfolio">
-			 <li>projets</li>
-			</a>
-			<a href="#contact">
-			 <li>contact</li>
-			</a>
-			<a href="./login.html">
-			 <li>login</li>
-			</a>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-    </nav>
-</header>
-<main>
-    <section class="login-section">
-        <h2>Log in</h2>
-        <form id="login-form">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" required>
-            <p class="error-message"></p>
-            <button type="submit">Se connecter</button>
-        </form>
-        <a href="" class="forgot-password">Mot de passe oublié ?</a>
-    </section>
-</main>
-<footer>
-    <nav>
-     <p>Mentions légales</p>
-    </nav>
+
+	<!-- EN-TÊTE : logo + navigation vers le site principal -->
+	<header>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav>
+			<ul>
+				<li><a href="./index.html#portfolio">projets</a></li>
+				<li><a href="./index.html#contact">contact</a></li>
+				<li><a href="./login.html">login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<!-- FORMULAIRE DE CONNEXION -->
+		<section class="login-section">
+			<h2>Log in</h2>
+			<form id="login-form">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" required>
+				<label for="password">Mot de passe</label>
+				<input type="password" name="password" id="password" required>
+				<!-- Zone d'affichage du message d'erreur (remplie par login.js si échec) -->
+				<p class="error-message"></p>
+				<button type="submit">Se connecter</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<nav>
+			<p>Mentions légales</p>
+		</nav>
+	</footer>
+
 </body>
+</html>

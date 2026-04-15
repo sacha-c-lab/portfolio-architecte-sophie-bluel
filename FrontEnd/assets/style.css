@@ -1,8 +1,7 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
+/* =========================================================
+   RESET CSS — supprime les styles par défaut des navigateurs
+   ========================================================= */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,7 +22,6 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -46,13 +44,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/** end reset css**/
+/* =========================================================
+   BASE — typographie et conteneur principal
+   ========================================================= */
 body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
+	font-family: 'Work Sans';
 	font-size: 14px;
 }
+
+.container {
+	max-width: 1140px;
+	margin: auto;
+}
+
+/* =========================================================
+   HEADER — logo et navigation
+   ========================================================= */
 header {
 	display: flex;
 	justify-content: space-between;
@@ -75,7 +82,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -84,6 +90,19 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+/* Barre noire "Mode édition" en haut de page (visible uniquement si connecté) */
+#edit-bar {
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -94,10 +113,13 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-
 li:hover {
 	color: #B1663C;
 }
+
+/* =========================================================
+   SECTION INTRODUCTION
+   ========================================================= */
 #introduction {
 	display: flex;
 	align-items: center;
@@ -121,22 +143,37 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
-#portfolio h2 {
-	text-align: center;
+
+/* =========================================================
+   SECTION PORTFOLIO — en-tête, filtres et galerie
+   ========================================================= */
+.portfolio-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
 	margin-bottom: 1em;
 }
+
+/* Bouton "modifier" affiché à côté du titre pour l'admin */
+.edit-button {
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* Boutons de filtre par catégorie */
 .filters {
-    display: flex;            
-    flex-wrap: wrap;          
-    justify-content: center;  
-    gap: 10px;                
-    margin-bottom: 20px;      
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .filters button {
     padding: 5px 15px;
     border: 1px solid #1D6154;
-    border-radius: 25%;
+    border-radius: 25px;
     background-color: white;
     color: #1D6154;
     cursor: pointer;
@@ -146,10 +183,8 @@ li:hover {
     background-color: #1D6154;
     color: white;
 }
-.filters button:hover {
-  background-color: #1D6154;
-  color: white;
-}
+
+/* Grille de la galerie — 3 colonnes égales */
 .gallery {
 	width: 100%;
 	display: grid;
@@ -162,6 +197,10 @@ li:hover {
 	width: 100%;
 
 }
+
+/* =========================================================
+   SECTION CONTACT — formulaire de prise de contact
+   ========================================================= */
 #contact {
 	width: 50%;
 margin: auto;
@@ -205,9 +244,207 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
+/* =========================================================
+   MODALE — fond, conteneur et fermeture
+   ========================================================= */
+
+/* Fond semi-transparent qui recouvre toute la page */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+/* Boîte blanche centrale de la modale */
+.modal-content {
+	background: white;
+	border-radius: 10px;
+	padding: 40px;
+	width: 630px;
+	max-width: 90%;
+	position: relative;
+	max-height: 85vh;
+	overflow-y: auto;
+}
+
+/* Croix de fermeture positionnée en haut à droite */
+#close-modal {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#gallery-view h2,
+#form-view h2 {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+/* =========================================================
+   MODALE — GALERIE D'ADMINISTRATION
+   ========================================================= */
+
+/* Grille de la galerie dans la modale */
+#modal-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	margin-bottom: 25px;
+}
+
+#modal-gallery img {
+	width: 100%;
+	height: 105px;
+	object-fit: cover;
+	display: block;
+}
+
+/* Bouton "Ajouter une photo" en bas de la galerie modale */
+#add-photo-btn {
+	display: block;
+	margin: 0 auto;
+	background-color: #1D6154;
+	color: white;
+	border: none;
+	padding: 12px 30px;
+	border-radius: 60px;
+	cursor: pointer;
+	font-family: 'Syne';
+	font-weight: 700;
+}
+
+/* Bouton poubelle sur chaque photo — visible au survol */
+#modal-gallery figure {
+	position: relative;
+}
+
+.delete-btn {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: black;
+	color: white;
+	border: none;
+	padding: 5px 8px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+#modal-gallery figure:hover .delete-btn {
+	opacity: 1;
+}
+
+/* =========================================================
+   MODALE — FORMULAIRE D'AJOUT DE PHOTO
+   ========================================================= */
+
+/* Flèche retour en haut à gauche de la vue formulaire */
+#back-arrow {
+	cursor: pointer;
+	font-size: 18px;
+	position: absolute;
+	top: 18px;
+	left: 20px;
+}
+
+#form-view form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 20px;
+}
+
+#form-view label {
+	font-size: 14px;
+}
+
+#form-view input[type="text"],
+#form-view select {
+	height: 40px;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+/* Zone cliquable pour uploader une image (affiche un aperçu après sélection) */
+.file-upload-area {
+	border: 2px dashed #ccc;
+	border-radius: 5px;
+	height: 170px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	cursor: pointer;
+	color: #888;
+	font-size: 13px;
+}
+
+.file-upload-area i {
+	font-size: 40px;
+	color: #ccc;
+}
+
+.file-upload-area img {
+	max-height: 160px;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.file-hint {
+	color: #aaa;
+	font-size: 11px;
+}
+
+/* Bouton "Valider" : gris et désactivé par défaut, vert quand le formulaire est complet */
+#submit-photo {
+	background-color: #a7a7a7;
+	color: white;
+	border: none;
+	padding: 12px;
+	border-radius: 60px;
+	cursor: not-allowed;
+	font-family: 'Syne';
+	font-weight: 700;
+	margin-top: 10px;
+}
+
+#submit-photo.active {
+	background-color: #1D6154;
+	cursor: pointer;
+}
+
+/* =========================================================
+   UTILITAIRES
+   ========================================================= */
+.hidden {
+	display: none !important;
+}
+
+/* Message d'erreur sous les champs de formulaire */
+.field-error {
+	color: #c0392b;
+	font-size: 12px;
+	margin-top: -8px;
+}
